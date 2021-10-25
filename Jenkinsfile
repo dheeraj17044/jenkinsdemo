@@ -6,9 +6,8 @@ pipeline {
 	stage('Compile')
 	{
 	    steps{
-           echo env.GIT_BRANCH
-	       sh '''chmod 777 mvnw 
-		    ./mvnw clean compile '''	
+           sh "git clone https://github.com/dheeraj17044/jenkinsdemo.git"
+	       sh "mvn clean -f jenkinsdemo"	
 		}
 	}
 	
