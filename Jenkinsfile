@@ -6,15 +6,15 @@ pipeline {
 	stage('Compile')
 	{
 	    steps{
-           sh "git clone https://github.com/dheeraj17044/jenkinsdemo.git"
-	       sh "mvn clean -f jenkinsdemo"	
+           bat "git clone https://github.com/dheeraj17044/jenkinsdemo.git"
+	       bat "mvn clean -f jenkinsdemo"	
 		}
 	}
 	
 	stage('Test')
 	{
 		steps{
-			sh '''
+			bat '''
 		    ./mvnw test'''	
 		}
 	}
@@ -22,7 +22,7 @@ pipeline {
 	stage('Create JAR') {
 
 		steps {
-			sh '''
+			bat '''
 		    	./mvnw install'''	
 		}
 	}
