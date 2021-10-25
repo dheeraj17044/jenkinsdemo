@@ -6,23 +6,21 @@ pipeline {
 	stage('Compile')
 	{
 	    steps{
-	       bat "mvn clean -f jenkinsdemo"	
+	       bat "mvn clean compile"	
 		}
 	}
 	
 	stage('Test')
 	{
 		steps{
-			bat '''
-		    ./mvnw test'''	
+			bat "mvn test"	
 		}
 	}
 
 	stage('Create JAR') {
 
 		steps {
-			bat '''
-		    	./mvnw install'''	
+			bat "mvn install"	
 		}
 	}
 	}
